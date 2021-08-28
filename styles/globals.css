@@ -373,3 +373,132 @@ body {
     background: #000;
     color: #fff;
 }
+
+.calendar-title-container{
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+.calendar-title-container> .calendar-title{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0015em;
+  color: rgba(6, 12, 31, 0.87);
+}
+.calendar-title-container> .calendar-title-inner{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.001em;
+  color:rgba(6, 12, 31,0.67)
+}
+.event-title{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.001em;
+  color:rgba(6, 12, 31,0.67)
+
+}
+.user-title-event{
+  font-family: Avenir !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0015em;
+  color:rgba(6, 12, 31,1);
+}
+.flex-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.cancel-btn{
+  background: #F6F8FA;
+  border-radius: 4px;
+  width: 102px;
+  height: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0125em;
+  text-transform: uppercase;
+  color:rgba(6, 12, 31,0.67);
+  justify-content: center;
+  margin-right: 16px;
+}
+.confirm-btn{
+  background: #00BB72;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0125em;
+  text-transform: uppercase;
+  width: 93px;
+  height: 40px;
+  color: #FFFFFF;
+  transition: all .3s ease-in-out;
+}
+.confirm-btn:hover{
+  background: #00BB72 !important;
+  color: #FFFFFF !important;
+
+  box-shadow: 0 8px 36px rgba(0, 0, 0, 0.17);
+}
+
+.partner-logos-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 68px;
+}
+
+.partner-logos-container >.partner-logos-title{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.0015em;
+  color:rgba(6, 12, 31,0.87);
+  margin-bottom: 24px;
+}
+
+.partner-logos-container >.image-container{
+  width: 150px !important;
+  height: 77px !important;
+}
+.partner-logos-container >.image-container >img{
+  width: 100% !important;
+  height: 100% !important;
+}

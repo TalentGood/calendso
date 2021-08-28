@@ -13,7 +13,7 @@ import Avatar from "@components/Avatar";
 import AvailableTimes from "@components/booking/AvailableTimes";
 import DatePicker from "@components/booking/DatePicker";
 import TimeOptions from "@components/booking/TimeOptions";
-import PoweredByCalendso from "@components/ui/PoweredByCalendso";
+// import PoweredByCalendso from "@components/ui/PoweredByCalendso";
 import { timeZone } from "@lib/clock";
 import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@lib/telemetry";
 import { asStringOrNull } from "@lib/asStringOrNull";
@@ -97,6 +97,13 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
               "mx-auto my-0 md:my-24 transition-max-width ease-in-out duration-500 " +
               (selectedDate ? "max-w-5xl" : "max-w-3xl")
             }>
+            <div className="calendar-title-container">
+              <div className="calendar-title">Schedule a Demo. Start your FREE Pilot.</div>
+              <div className="calendar-title-inner">
+                Explorer all-in-one Edorer and how it can empower your university / college. Kickstart a FREE
+                Pilot!
+              </div>
+            </div>
             <div className="bg-white border-gray-200 rounded-sm sm:dark:border-gray-600 dark:bg-gray-900 md:border">
               {/* mobile: details */}
               <div className="block p-4 sm:p-8 md:hidden">
@@ -131,8 +138,10 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
                     displayName={props.user.name}
                     className="w-16 h-16 mb-4 rounded-full"
                   />
-                  <h2 className="font-medium text-gray-500 dark:text-gray-300">{props.user.name}</h2>
-                  <h1 className="mb-4 text-3xl font-semibold text-gray-800 dark:text-white">
+                  <h2 className="font-medium text-gray-500 dark:text-gray-300 user-title-event">
+                    {props.user.name}
+                  </h2>
+                  <h1 className="mb-4 text-3xl font-semibold text-gray-800 dark:text-white event-title">
                     {props.eventType.title}
                   </h1>
                   <p className="px-2 py-1 mb-1 -ml-2 text-gray-500">
@@ -178,7 +187,35 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
                 )}
               </div>
             </div>
-            {!props.user.hideBranding && <PoweredByCalendso />}
+            <div className="partner-logos-container">
+              <div className="partner-logos-title">Leading University Love Edorer</div>
+              <div className="partner-logos-list">
+                <div className="image-container">
+                  <img src="../../public/images/PPSU-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/MMDU-Mullana-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/Multimedia-University-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/HBTU-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/GHRU-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/MMMUT-Logo.png" alt="" />
+                </div>
+                <div className="image-container">
+                  <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                </div>
+              </div>
+            </div>
           </main>
         </div>
       )}

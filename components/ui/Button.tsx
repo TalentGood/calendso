@@ -12,6 +12,7 @@ export type ButtonProps = {
   size?: "base" | "sm" | "lg" | "fab";
   loading?: boolean;
   disabled?: boolean;
+  confirmation?: bigint;
   onClick?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   StartIcon?: SVGComponent;
   EndIcon?: SVGComponent;
@@ -22,6 +23,7 @@ export const Button = function Button(props: ButtonProps) {
     loading = false,
     color = "primary",
     size = "base",
+    confirmation = false,
     StartIcon,
     EndIcon,
     // attributes propagated from `HTMLAnchorProps` or `HTMLButtonProps`
@@ -66,6 +68,7 @@ export const Button = function Button(props: ButtonProps) {
 
         // set not-allowed cursor if disabled
         disabled && "cursor-not-allowed",
+        confirmation ? "confirm-btn" : "",
         props.className
       ),
       // if we click a disabled button, we prevent going through the click handler

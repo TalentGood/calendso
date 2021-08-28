@@ -116,7 +116,8 @@ export default function Book(props: any): JSX.Element {
         jitsu.track(telemetryEventTypes.bookingConfirmed, collectPageParameters())
       );
 
-      /*const res = await */ fetch("/api/book/" + user, {
+      /*const res = await */
+      fetch("/api/book/" + user, {
         body: JSON.stringify(payload),
         headers: {
           "Content-Type": "application/json",
@@ -160,6 +161,13 @@ export default function Book(props: any): JSX.Element {
         />
 
         <main className="max-w-3xl mx-auto my-0 sm:my-24">
+          <div className="calendar-title-container">
+            <div className="calendar-title">Schedule a Demo. Start your FREE Pilot.</div>
+            <div className="calendar-title-inner">
+              Explorer all-in-one Edorer and how it can empower your university / college. Kickstart a FREE
+              Pilot!
+            </div>
+          </div>
           <div className="dark:bg-neutral-900 bg-white overflow-hidden border border-gray-200 dark:border-0 sm:rounded-sm">
             <div className="sm:flex px-4 py-5 sm:p-4">
               <div className="sm:w-1/2 sm:border-r sm:dark:border-black">
@@ -169,7 +177,7 @@ export default function Book(props: any): JSX.Element {
                   className="w-16 h-16 rounded-full mb-4"
                 />
                 <h2 className="font-medium dark:text-gray-300 text-gray-500">{props.user.name}</h2>
-                <h1 className="text-3xl font-semibold dark:text-white text-gray-800 mb-4">
+                <h1 className="text-3xl font-semibold dark:text-white text-gray-800 mb-4 event-title">
                   {props.eventType.title}
                 </h1>
                 <p className="text-gray-500 mb-2">
@@ -362,22 +370,18 @@ export default function Book(props: any): JSX.Element {
                     <label
                       htmlFor="notes"
                       className="block text-sm font-medium dark:text-white text-gray-700 mb-1">
-                      Additional notes
+                      University name
                     </label>
-                    <textarea
+                    <input
                       name="notes"
                       id="notes"
-                      rows={3}
+                      type="text"
                       className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
-                      placeholder="Please share anything that will help prepare for our meeting."
-                      defaultValue={props.booking ? props.booking.description : ""}
+                      placeholder="Type here..."
                     />
                   </div>
-                  <div className="flex items-start">
+                  <div className="flex items-start flex-end">
                     {/* TODO: add styling props to <Button variant="" color="" /> and get rid of btn-primary */}
-                    <Button type="submit" loading={loading}>
-                      {rescheduleUid ? "Reschedule" : "Confirm"}
-                    </Button>
                     <Link
                       href={
                         "/" +
@@ -386,8 +390,11 @@ export default function Book(props: any): JSX.Element {
                         props.eventType.slug +
                         (rescheduleUid ? "?rescheduleUid=" + rescheduleUid : "")
                       }>
-                      <a className="ml-2 text-sm dark:text-white p-2">Cancel</a>
+                      <a className="ml-2 text-sm dark:text-white p-2 cancel-btn">Cancel</a>
                     </Link>
+                    <Button confirmation={true} type="submit" loading={loading}>
+                      {rescheduleUid ? "Reschedule" : "Confirm"}
+                    </Button>
                   </div>
                 </form>
                 {error && (
@@ -409,6 +416,35 @@ export default function Book(props: any): JSX.Element {
                     </div>
                   </div>
                 )}
+              </div>
+            </div>
+          </div>
+          <div className="partner-logos-container">
+            <div className="partner-logos-title">Leading University Love Edorer</div>
+            <div className="partner-logos-list">
+              <div className="image-container">
+                <img src="../../public/images/PPSU-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/MMDU-Mullana-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/Multimedia-University-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/HBTU-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/Parul-University-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/GHRU-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/MMMUT-Logo.png" alt="" />
+              </div>
+              <div className="image-container">
+                <img src="../../public/images/Parul-University-Logo.png" alt="" />
               </div>
             </div>
           </div>
