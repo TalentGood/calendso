@@ -28,7 +28,7 @@ export default function Success(props) {
   useEffect(() => {
     setDate(date.tz(localStorage.getItem("timeOption.preferredTimeZone") || dayjs.tz.guess()));
     setIs24h(!!localStorage.getItem("timeOption.is24hClock"));
-  }, []);
+  });
 
   const eventName = getEventName(name, props.eventType.title, props.eventType.eventName);
 

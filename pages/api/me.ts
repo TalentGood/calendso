@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@lib/prisma";
 import { getSession } from "@lib/auth";
 import { defaultAvatarSrc } from "@lib/profile";
+import { User } from "next-auth";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const session = await getSession({ req: req });

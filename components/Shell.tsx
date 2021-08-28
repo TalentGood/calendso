@@ -15,7 +15,7 @@ import {
   LogoutIcon,
   PuzzleIcon,
 } from "@heroicons/react/solid";
-import Logo from "./Logo";
+// import Logo from "./Logo";
 import classNames from "@lib/classNames";
 import { Toaster } from "react-hot-toast";
 import Avatar from "@components/Avatar";
@@ -94,11 +94,11 @@ export default function Shell(props) {
             {/* Sidebar component, swap this element with another sidebar if you like */}
             <div className="flex flex-col h-0 flex-1 border-r border-gray-200 bg-white">
               <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-                <Link href="/event-types">
-                  <a className="px-4">
-                    <Logo small />
-                  </a>
-                </Link>
+                {/*<Link href="/event-types">*/}
+                {/*  <a className="px-4">*/}
+                {/*    <Logo small />*/}
+                {/*  </a>*/}
+                {/*</Link>*/}
                 <nav className="mt-5 flex-1 px-2 bg-white space-y-1">
                   {navigation.map((item) => (
                     <Link key={item.name} href={item.href}>
@@ -135,11 +135,11 @@ export default function Shell(props) {
           <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
             {/* show top navigation for md and smaller (tablet and phones) */}
             <nav className="md:hidden bg-white shadow p-4 flex justify-between items-center">
-              <Link href="/event-types">
-                <a>
-                  <Logo />
-                </a>
-              </Link>
+              {/*<Link href="/event-types">*/}
+              {/*  <a>*/}
+              {/*    <Logo />*/}
+              {/*  </a>*/}
+              {/*</Link>*/}
               <div className="flex gap-3 items-center self-center">
                 <button className="bg-white p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black">
                   <span className="sr-only">View notifications</span>

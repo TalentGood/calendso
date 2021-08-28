@@ -202,8 +202,10 @@ export default function Book(props: any): JSX.Element {
               <div className="sm:w-1/2 sm:pl-8 sm:pr-4">
                 <form onSubmit={bookingHandler}>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium dark:text-white text-gray-700">
-                      Your name
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium dark:text-white text-gray-700 form-information-font">
+                      Name
                     </label>
                     <div className="mt-1">
                       <input
@@ -211,7 +213,7 @@ export default function Book(props: any): JSX.Element {
                         name="name"
                         id="name"
                         required
-                        className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                         placeholder="John Doe"
                         defaultValue={props.booking ? props.booking.attendees[0].name : ""}
                       />
@@ -220,8 +222,8 @@ export default function Book(props: any): JSX.Element {
                   <div className="mb-4">
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium dark:text-white text-gray-700">
-                      Email address
+                      className="block text-sm font-medium dark:text-white text-gray-700 form-information-font">
+                      Email
                     </label>
                     <div className="mt-1">
                       <input
@@ -229,7 +231,7 @@ export default function Book(props: any): JSX.Element {
                         name="email"
                         id="email"
                         required
-                        className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                        className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                         placeholder="you@example.com"
                         defaultValue={props.booking ? props.booking.attendees[0].email : ""}
                       />
@@ -237,7 +239,7 @@ export default function Book(props: any): JSX.Element {
                   </div>
                   {locations.length > 1 && (
                     <div className="mb-4">
-                      <span className="block text-sm font-medium dark:text-white text-gray-700">
+                      <span className="block text-sm font-medium dark:text-white text-gray-700 form-information-font">
                         Location
                       </span>
                       {locations.map((location) => (
@@ -246,12 +248,12 @@ export default function Book(props: any): JSX.Element {
                             type="radio"
                             required
                             onChange={(e) => setSelectedLocation(e.target.value)}
-                            className="location focus:ring-black h-4 w-4 text-black border-gray-300 mr-2"
+                            className="location focus:ring-black h-4 w-4 text-black border-gray-300 mr-2 border-radius"
                             name="location"
                             value={location.type}
                             checked={selectedLocation === location.type}
                           />
-                          <span className="text-sm ml-2 dark:text-gray-500">
+                          <span className="text-sm ml-2 dark:text-gray-500 form-information-font">
                             {locationLabels[location.type]}
                           </span>
                         </label>
@@ -262,7 +264,7 @@ export default function Book(props: any): JSX.Element {
                     <div className="mb-4">
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium dark:text-white text-gray-700">
+                        className="block text-sm font-medium dark:text-white text-gray-700 form-information-font">
                         Phone number
                       </label>
                       <div className="mt-1">
@@ -272,13 +274,13 @@ export default function Book(props: any): JSX.Element {
                   )}
                   {props.eventType.customInputs &&
                     props.eventType.customInputs
-                      .sort((a, b) => a.id - b.id)
+                      .sort((a: any, b: any) => a.id - b.id)
                       .map((input) => (
                         <div className="mb-4" key={"input-" + input.label.toLowerCase}>
                           {input.type !== EventTypeCustomInputType.BOOL && (
                             <label
                               htmlFor={"custom_" + input.id}
-                              className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
+                              className="block text-sm font-medium text-gray-700 dark:text-white mb-1 form-information-font">
                               {input.label}
                             </label>
                           )}
@@ -288,7 +290,7 @@ export default function Book(props: any): JSX.Element {
                               id={"custom_" + input.id}
                               required={input.required}
                               rows={3}
-                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                               placeholder={input.placeholder}
                             />
                           )}
@@ -298,7 +300,7 @@ export default function Book(props: any): JSX.Element {
                               name={"custom_" + input.id}
                               id={"custom_" + input.id}
                               required={input.required}
-                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                               placeholder={input.placeholder}
                             />
                           )}
@@ -308,7 +310,7 @@ export default function Book(props: any): JSX.Element {
                               name={"custom_" + input.id}
                               id={"custom_" + input.id}
                               required={input.required}
-                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                              className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                               placeholder=""
                             />
                           )}
@@ -318,12 +320,12 @@ export default function Book(props: any): JSX.Element {
                                 type="checkbox"
                                 name={"custom_" + input.id}
                                 id={"custom_" + input.id}
-                                className="focus:ring-black h-4 w-4 text-black border-gray-300 rounded mr-2"
+                                className="focus:ring-black h-4 w-4 text-black border-gray-300 rounded mr-2 border-radius"
                                 placeholder=""
                               />
                               <label
                                 htmlFor={"custom_" + input.id}
-                                className="block text-sm font-medium text-gray-700 dark:text-white mb-1">
+                                className="block text-sm font-medium text-gray-700 dark:text-white mb-1 form-information-font">
                                 {input.label}
                               </label>
                             </div>
@@ -335,7 +337,7 @@ export default function Book(props: any): JSX.Element {
                       <label
                         onClick={toggleGuestEmailInput}
                         htmlFor="guests"
-                        className="block text-sm font-medium dark:text-white text-blue-500 mb-1 hover:cursor-pointer">
+                        className="block text-sm font-medium dark:text-white text-blue-500 mb-1 hover:cursor-pointer form-information-font add-guest">
                         + Additional Guests
                       </label>
                     )}
@@ -343,13 +345,13 @@ export default function Book(props: any): JSX.Element {
                       <div>
                         <label
                           htmlFor="guests"
-                          className="block text-sm font-medium dark:text-white text-gray-700 mb-1">
+                          className="block text-sm font-medium dark:text-white text-gray-700 mb-1 form-information-font">
                           Guests
                         </label>
                         <ReactMultiEmail
                           placeholder="guest@example.com"
                           emails={guestEmails}
-                          onChange={(_emails: string[]) => {
+                          onChange={(_emails: any[]) => {
                             setGuestEmails(_emails);
                           }}
                           getLabel={(email: string, index: number, removeEmail: (index: number) => void) => {
@@ -369,14 +371,14 @@ export default function Book(props: any): JSX.Element {
                   <div className="mb-4">
                     <label
                       htmlFor="notes"
-                      className="block text-sm font-medium dark:text-white text-gray-700 mb-1">
+                      className="block text-sm font-medium dark:text-white text-gray-700 mb-1 form-information-font">
                       University name
                     </label>
                     <input
                       name="notes"
                       id="notes"
                       type="text"
-                      className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md"
+                      className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
                       placeholder="Type here..."
                     />
                   </div>
@@ -423,28 +425,28 @@ export default function Book(props: any): JSX.Element {
             <div className="partner-logos-title">Leading University Love Edorer</div>
             <div className="partner-logos-list">
               <div className="image-container">
-                <img src="../../public/images/PPSU-Logo.png" alt="" />
+                <img src="/images/PPSU-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/MMDU-Mullana-Logo.png" alt="" />
+                <img src="/images/MMDU-Mullana-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/Multimedia-University-Logo.png" alt="" />
+                <img src="/images/Multimedia-University-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/HBTU-Logo.png" alt="" />
+                <img src="/images/HBTU-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                <img src="/images/Parul-University-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/GHRU-Logo.png" alt="" />
+                <img src="/images/GHRU-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/MMMUT-Logo.png" alt="" />
+                <img src="/images/MMMUT-Logo.png" alt="" />
               </div>
               <div className="image-container">
-                <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                <img src="/images/Parul-University-Logo.png" alt="" />
               </div>
             </div>
           </div>

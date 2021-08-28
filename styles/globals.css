@@ -494,11 +494,57 @@ body {
   margin-bottom: 24px;
 }
 
-.partner-logos-container >.image-container{
+.partner-logos-container  > .partner-logos-list > .image-container{
   width: 150px !important;
   height: 77px !important;
+  margin-right: 40px;
 }
-.partner-logos-container >.image-container >img{
+.partner-logos-container > > .partner-logos-list .image-container:last-child{
+  margin-right: 0;
+}
+.partner-logos-container > .partner-logos-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.partner-logos-container > .partner-logos-list > .image-container > .image{
   width: 100% !important;
   height: 100% !important;
+}
+
+.form-information-font{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.001em;
+  color:rgba(6, 12, 31,0.67);
+}
+.add-guest{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.001em;
+
+  color: #00BB72;
+}
+.border-radius{
+  background: #FFFFFF;
+  /* Border Color */
+
+  border: 1px solid #E6E9E8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+body{
+  background-color: white !important;
 }

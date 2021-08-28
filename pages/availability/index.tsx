@@ -3,12 +3,12 @@ import prisma from "@lib/prisma";
 import Modal from "@components/Modal";
 import Shell from "@components/Shell";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { getSession, useSession } from "next-auth/client";
 import { ClockIcon } from "@heroicons/react/outline";
 import Loader from "@components/Loader";
 
-export default function Availability(props) {
+export default function Availability(props: any) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [session, loading] = useSession();
   const router = useRouter();
@@ -45,7 +45,7 @@ export default function Availability(props) {
     router.replace(router.asPath);
   };
 
-  function convertMinsToHrsMins(mins) {
+  function convertMinsToHrsMins(mins: any) {
     let h = Math.floor(mins / 60);
     let m = mins % 60;
     h = h < 10 ? "0" + h : h;
@@ -53,7 +53,7 @@ export default function Availability(props) {
     return `${h}:${m}`;
   }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async function createEventTypeHandler(event) {
+  async function createEventTypeHandler(event: any) {
     event.preventDefault();
 
     const enteredTitle = titleRef.current.value;
@@ -87,12 +87,12 @@ export default function Availability(props) {
   async function updateStartEndTimesHandler(event) {
     event.preventDefault();
 
-    const enteredStartHours = parseInt(startHoursRef.current.value);
-    const enteredStartMins = parseInt(startMinsRef.current.value);
-    const enteredEndHours = parseInt(endHoursRef.current.value);
-    const enteredEndMins = parseInt(endMinsRef.current.value);
-    const enteredBufferHours = parseInt(bufferHoursRef.current.value);
-    const enteredBufferMins = parseInt(bufferMinsRef.current.value);
+    const enteredStartHours: any = parseInt(startHoursRef.current.value);
+    const enteredStartMins: any = parseInt(startMinsRef.current.value);
+    const enteredEndHours: any = parseInt(endHoursRef.current.value);
+    const enteredEndMins: any = parseInt(endMinsRef.current.value);
+    const enteredBufferHours: any = parseInt(bufferHoursRef.current.value);
+    const enteredBufferMins: any = parseInt(bufferMinsRef.current.value);
 
     const startMins = enteredStartHours * 60 + enteredStartMins;
     const endMins = enteredEndHours * 60 + enteredEndMins;

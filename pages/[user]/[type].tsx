@@ -191,28 +191,28 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
               <div className="partner-logos-title">Leading University Love Edorer</div>
               <div className="partner-logos-list">
                 <div className="image-container">
-                  <img src="../../public/images/PPSU-Logo.png" alt="" />
+                  <img src="/images/PPSU-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/MMDU-Mullana-Logo.png" alt="" />
+                  <img src="/images/MMDU-Mullana-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/Multimedia-University-Logo.png" alt="" />
+                  <img src="/images/Multimedia-University-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/HBTU-Logo.png" alt="" />
+                  <img src="/images/HBTU-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                  <img src="/images/Parul-University-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/GHRU-Logo.png" alt="" />
+                  <img src="/images/GHRU-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/MMMUT-Logo.png" alt="" />
+                  <img src="/images/MMMUT-Logo.png" alt="" />
                 </div>
                 <div className="image-container">
-                  <img src="../../public/images/Parul-University-Logo.png" alt="" />
+                  <img src="/images/Parul-University-Logo.png" alt="" />
                 </div>
               </div>
             </div>

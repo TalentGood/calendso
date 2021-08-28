@@ -7,14 +7,15 @@ import { Credential } from "@prisma/client";
 import CalEventParser from "./CalEventParser";
 import { EventResult } from "@lib/events/EventManager";
 import logger from "@lib/logger";
-
-const log = logger.getChildLogger({ prefix: ["[lib] calendarClient"] });
 import { CalDavCalendar } from "./integrations/CalDav/CalDavCalendarAdapter";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { google } = require("googleapis");
+import { google } from "googleapis";
 
-const googleAuth = (credential) => {
+const log = logger.getChildLogger({ prefix: ["[lib] calendarClient"] });
+
+// const google = googleDep;
+
+const googleAuth = (credential: any) => {
   const { client_secret, client_id, redirect_uris } = JSON.parse(process.env.GOOGLE_API_CREDENTIALS).web;
   const myGoogleAuth = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
   myGoogleAuth.setCredentials(credential.key);
@@ -68,10 +69,10 @@ function handleErrorsRaw(response) {
   return response.text();
 }
 
-const o365Auth = (credential) => {
-  const isExpired = (expiryDate) => expiryDate < Math.round(+new Date() / 1000);
+const o365Auth = (credential: any) => {
+  const isExpired = (expiryDate: any) => expiryDate < Math.round(+new Date() / 1000);
 
-  const refreshAccessToken = (refreshToken) => {
+  const refreshAccessToken = (refreshToken: any) => {
     return fetch("https://login.microsoftonline.com/common/oauth2/v2.0/token", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -186,7 +187,7 @@ const MicrosoftOffice365Calendar = (credential): CalendarApiAdapter => {
   const integrationType = "office365_calendar";
 
   function listCalendars(): Promise<IntegrationCalendar[]> {
-    return auth.getToken().then((accessToken) =>
+    return auth.getToken().then((accessToken: any) =>
       fetch("https://graph.microsoft.com/v1.0/me/calendars", {
         method: "get",
         headers: {
@@ -196,7 +197,7 @@ const MicrosoftOffice365Calendar = (credential): CalendarApiAdapter => {
       })
         .then(handleErrorsJson)
         .then((responseBody) => {
-          return responseBody.value.map((cal) => {
+          return responseBody.value.map((cal: any) => {
             const calendar: IntegrationCalendar = {
               externalId: cal.id,
               integration: integrationType,
@@ -248,9 +249,9 @@ const MicrosoftOffice365Calendar = (credential): CalendarApiAdapter => {
               .then(handleErrorsJson)
               .then((responseBody) =>
                 responseBody.responses.reduce(
-                  (acc, subResponse) =>
+                  (acc: any, subResponse: any) =>
                     acc.concat(
-                      subResponse.body.value.map((evt) => {
+                      subResponse.body.value.map((evt: any) => {
                         return {
                           start: evt.start.dateTime + "Z",
                           end: evt.end.dateTime + "Z",
