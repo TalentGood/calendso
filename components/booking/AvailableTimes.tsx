@@ -42,7 +42,7 @@ const AvailableTimes = ({
                 `/${user.username}/book?date=${slot.utc().format()}&type=${eventTypeId}` +
                 (rescheduleUid ? "&rescheduleUid=" + rescheduleUid : "")
               }>
-              <a className="block font-medium mb-4 bg-white dark:bg-gray-600 text-primary-500 dark:text-neutral-200 border border-primary-500 dark:border-transparent rounded-sm hover:text-white hover:bg-primary-500 dark:hover:border-black py-4 dark:hover:bg-black">
+              <a className="block font-medium mb-4 bg-white dark:bg-gray-600 text-primary-500 dark:text-neutral-200 border border-primary-500 dark:border-transparent rounded-sm hover:text-white hover:bg-primary-500 dark:hover:border-black py-4 dark:hover:bg-black time-picker">
                 {slot.format(timeFormat)}
               </a>
             </Link>

@@ -548,3 +548,39 @@ body {
 body{
   background-color: white !important;
 }
+
+.time-picker{
+  /*width: 333px;*/
+  /*height: 56px;*/
+  border: 1px solid #060C1F !important;
+  box-sizing: border-box;
+  border-radius: 4px !important;
+  font-family: Avenir !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 19px !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.001em;
+  color: #060C1F;
+  justify-content: center;
+}
+.time-picker:hover{
+  color: #00BB72 !important;
+  background: transparent !important;
+  border: 1px solid #00BB72 !important;
+}
+.date-picker-container{
+ border-radius: 50% !important;
+}
+.date-picker-active-container{
+  background: #00BB72 !important;
+}
+.date-picker-container:hover{
+  border: none;
+}
+.date-picker-not-active-container{
+  background: #00BB72 !important;
+}

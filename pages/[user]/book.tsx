@@ -333,6 +333,20 @@ export default function Book(props: any): JSX.Element {
                         </div>
                       ))}
                   <div className="mb-4">
+                    <label
+                      htmlFor="notes"
+                      className="block text-sm font-medium dark:text-white text-gray-700 mb-1 form-information-font">
+                      University name
+                    </label>
+                    <input
+                      name="notes"
+                      id="notes"
+                      type="text"
+                      className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
+                      placeholder="Type here..."
+                    />
+                  </div>
+                  <div className="mb-4">
                     {!guestToggle && (
                       <label
                         onClick={toggleGuestEmailInput}
@@ -368,20 +382,7 @@ export default function Book(props: any): JSX.Element {
                       </div>
                     )}
                   </div>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="notes"
-                      className="block text-sm font-medium dark:text-white text-gray-700 mb-1 form-information-font">
-                      University name
-                    </label>
-                    <input
-                      name="notes"
-                      id="notes"
-                      type="text"
-                      className="shadow-sm dark:bg-black dark:text-white dark:border-gray-900 focus:ring-black focus:border-black block w-full sm:text-sm border-gray-300 rounded-md border-radius"
-                      placeholder="Type here..."
-                    />
-                  </div>
+
                   <div className="flex items-start flex-end">
                     {/* TODO: add styling props to <Button variant="" color="" /> and get rid of btn-primary */}
                     <Link

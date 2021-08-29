@@ -147,17 +147,17 @@ const DatePicker = ({
           style={{
             paddingTop: "100%",
           }}
-          className="w-full relative">
+          className="w-full relative date-picker-container">
           <button
             onClick={() => setSelectedDate(inviteeDate.date(day))}
             disabled={isDisabled(day)}
             className={
               "absolute w-full top-0 left-0 right-0 bottom-0 rounded-sm text-center mx-auto hover:border hover:border-black dark:hover:border-white" +
               (isDisabled(day)
-                ? " text-gray-400 font-light hover:border-0 cursor-default"
-                : " dark:text-white text-primary-500 font-medium") +
+                ? " text-gray-400 font-light hover:border-0 cursor-default date-picker-container"
+                : " dark:text-white text-primary-500 font-medium date-picker-container") +
               (selectedDate && selectedDate.isSame(inviteeDate.date(day), "day")
-                ? " bg-black text-white-important"
+                ? " bg-black text-white-important date-picker-active-container"
                 : !isDisabled(day)
                 ? " bg-gray-100 dark:bg-gray-600"
                 : "")
@@ -184,7 +184,7 @@ const DatePicker = ({
           </strong>
           <span className="text-gray-500"> {dayjs().month(selectedMonth).format("YYYY")}</span>
         </span>
-        <div className="w-1/2 text-right text-gray-600 dark:text-gray-400">
+        <div className="w-1/2 text-right text-gray-600 dark:text-gray-400 ">
           <button
             onClick={decrementMonth}
             className={
