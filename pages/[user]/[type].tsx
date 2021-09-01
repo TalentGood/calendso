@@ -80,6 +80,30 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
     setTimeFormat(is24hClock ? "HH:mm" : "h:mma");
   };
 
+  const randomImages = [
+    "/images/PPSU-Logo.png",
+    "/images/MMDU-Mullana-Logo.png",
+    "/images/Multimedia-University-Logo.png",
+    "/images/HBTU-Logo.png",
+    "/images/Parul-University-Logo.png",
+    "/images/GHRU-Logo.png",
+    "/images/MMMUT-Logo.png",
+    "/images/Parul-University-Logo.png",
+  ];
+
+  function shuffled(array: any) {
+    let currentIndex = array.length,
+      randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+
+  const randomImagesAfterShuffled = shuffled(randomImages);
+
   return (
     <>
       <HeadSeo
@@ -190,30 +214,11 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
             <div className="partner-logos-container">
               <div className="partner-logos-title">Leading University Love Edorer</div>
               <div className="partner-logos-list">
-                <div className="image-container">
-                  <img src="/images/PPSU-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/MMDU-Mullana-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/Multimedia-University-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/HBTU-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/Parul-University-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/GHRU-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/MMMUT-Logo.png" alt="" />
-                </div>
-                <div className="image-container">
-                  <img src="/images/Parul-University-Logo.png" alt="" />
-                </div>
+                {randomImagesAfterShuffled.map((image, index) => (
+                  <div className="image-container" key={index}>
+                    <img src={image} alt="" />
+                  </div>
+                ))}
               </div>
             </div>
           </main>
