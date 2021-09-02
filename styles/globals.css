@@ -499,9 +499,9 @@ body {
   height: 77px !important;
   margin-right: 40px;
 }
-.partner-logos-container > > .partner-logos-list .image-container:last-child{
-  margin-right: 0;
-}
+/*.partner-logos-container > > .partner-logos-list .image-container:last-child{*/
+/*  margin-right: 0;*/
+/*}*/
 .partner-logos-container > .partner-logos-list{
   display: flex;
   justify-content: center;

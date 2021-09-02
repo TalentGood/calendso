@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { getSession, useSession } from "next-auth/client";
 import Loader from "@components/Loader";
 
-export default function Integration(props) {
+export default function Integration(props: any) {
   const router = useRouter();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [session, loading] = useSession();
@@ -21,7 +21,7 @@ export default function Integration(props) {
     setShowAPIKey(!showAPIKey);
   }
 
-  async function deleteIntegrationHandler(event) {
+  async function deleteIntegrationHandler(event: any) {
     event.preventDefault();
 
     /*eslint-disable */
