@@ -502,6 +502,7 @@ body {
 /*.partner-logos-container > > .partner-logos-list .image-container:last-child{*/
 /*  margin-right: 0;*/
 /*}*/
+
 .partner-logos-container > .partner-logos-list{
   display: flex;
   justify-content: center;
