@@ -1,6 +1,6 @@
 import { getSession } from "@lib/auth";
 import { google } from "googleapis";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const credentials = process.env.GOOGLE_API_CREDENTIALS!;
 const scopes = [
