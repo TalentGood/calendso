@@ -497,7 +497,7 @@ body {
 .partner-logos-container  > .partner-logos-list > .image-container{
   width: 150px !important;
   height: 77px !important;
-  margin-right: 40px;
+  margin-right: 40px !important;
 }
 .partner-logos-container > > .partner-logos-list .image-container:last-child{
   margin-right:40px !important;
