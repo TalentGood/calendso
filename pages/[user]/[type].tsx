@@ -17,6 +17,7 @@ import TimeOptions from "@components/booking/TimeOptions";
 import { timeZone } from "@lib/clock";
 import { collectPageParameters, telemetryEventTypes, useTelemetry } from "@lib/telemetry";
 import { asStringOrNull } from "@lib/asStringOrNull";
+import { Nav } from "../../components/nav/nav";
 
 export default function Type(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
   // Get router variables
@@ -116,6 +117,7 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
       />
       {isReady && (
         <div>
+          <Nav />
           <main
             className={
               "mx-auto my-0 md:my-24 transition-max-width ease-in-out duration-500 " +

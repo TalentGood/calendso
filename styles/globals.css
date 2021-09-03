@@ -585,3 +585,23 @@ body{
 .date-picker-not-active-container{
   background: #00BB72 !important;
 }
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  border-bottom:1px solid #F1F4FE;
+}
+.nav-container > .nav-left-side {
+  margin: 10px;
+  width: 172px;
+  height: 51px;
+}
+.nav-container > .nav-left-side> .logo {
+  width: 100%;
+  cursor: pointer;
+}

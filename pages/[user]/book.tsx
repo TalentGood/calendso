@@ -15,6 +15,7 @@ import Avatar from "@components/Avatar";
 import { Button } from "@components/ui/Button";
 import Theme from "@components/Theme";
 import { ReactMultiEmail } from "react-multi-email";
+import { Nav } from "../../components/nav/nav";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -182,7 +183,7 @@ export default function Book(props: any): JSX.Element {
             props.user.name || props.user.username
           }`}
         />
-
+        <Nav />
         <main className="max-w-3xl mx-auto my-0 sm:my-24">
           <div className="calendar-title-container">
             <div className="calendar-title">Schedule a Demo. Start your FREE Pilot.</div>

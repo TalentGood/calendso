@@ -12,6 +12,7 @@ import timezone from "dayjs/plugin/timezone";
 import { createEvent } from "ics";
 import { getEventName } from "@lib/event";
 import Theme from "@components/Theme";
+import { Nav } from "../components/nav/nav";
 
 dayjs.extend(utc);
 dayjs.extend(toArray);
@@ -28,7 +29,7 @@ export default function Success(props) {
   useEffect(() => {
     setDate(date.tz(localStorage.getItem("timeOption.preferredTimeZone") || dayjs.tz.guess()));
     setIs24h(!!localStorage.getItem("timeOption.is24hClock"));
-  });
+  }, [date]);
 
   const eventName = getEventName(name, props.eventType.title, props.eventType.eventName);
 
@@ -65,6 +66,7 @@ export default function Success(props) {
           title={`Booking ${props.eventType.requiresConfirmation ? "Submitted" : "Confirmed"}`}
           description={`Booking ${props.eventType.requiresConfirmation ? "Submitted" : "Confirmed"}`}
         />
+        <Nav />
         <main className="max-w-3xl mx-auto py-24">
           <div className="fixed z-50 inset-0 overflow-y-auto">
             <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
