@@ -82,14 +82,14 @@ export default function Type(props: InferGetServerSidePropsType<typeof getServer
   };
 
   const randomImages = [
-    "/images/PPSU-Logo.png",
-    "/images/MMDU-Mullana-Logo.png",
-    "/images/Multimedia-University-Logo.png",
-    "/images/HBTU-Logo.png",
-    "/images/Parul-University-Logo.png",
-    "/images/GHRU-Logo.png",
-    "/images/MMMUT-Logo.png",
-    "/images/Parul-University-Logo.png",
+    "/images/partner-1.png",
+    "/images/partner-2.png",
+    "/images/partner-3.png",
+    "/images/partner-4.png",
+    "/images/partner-5.png",
+    "/images/partner-6.png",
+    "/images/partner-7.png",
+    "/images/partner-8.png",
   ];
 
   function shuffled(array: any) {
